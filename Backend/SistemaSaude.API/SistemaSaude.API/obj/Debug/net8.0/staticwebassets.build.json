@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "yKFha62wOwKuNG7044pGbRwXuJIwK4psG/Rk8rHNd6k=",
+  "Source": "SistemaSaude.API",
+  "BasePath": "_content/SistemaSaude.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
