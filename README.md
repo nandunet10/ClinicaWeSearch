@@ -48,7 +48,7 @@ CREATE TABLE Pacientes (
 -- Tabela de Atendimentos
 CREATE TABLE Atendimentos (
     Id INT PRIMARY KEY IDENTITY,
-    NumeroSequencial INT NOT NULL,
+    NumeroSequencial NVARCHAR(12) NOT NULL,
     PacienteId INT,
     DataHoraChegada DATETIME NOT NULL DEFAULT GETDATE(),
     Status VARCHAR(20) NOT NULL,
