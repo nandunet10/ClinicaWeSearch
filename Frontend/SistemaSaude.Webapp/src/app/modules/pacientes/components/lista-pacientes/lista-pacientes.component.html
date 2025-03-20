@@ -12,34 +12,39 @@
       </div>
     </div>
   </div>
-  <table class="full-width-table table table-striped table-style mat-elevation-z8">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Telefone</th>
-        <th>Email</th>
-        <th>Sexo</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody *ngIf="pacientes.length > 0">
-      <tr *ngFor="let paciente of pacientes">
-        <td>{{ paciente.nome }}</td>
-        <td>{{ paciente.telefone }}</td>
-        <td>{{ paciente.email }}</td>
-        <td>{{ paciente.sexo }}</td>
-        <td class="d-flex justify-content-center">
-          <button type="button" class="btn btn-outline-warning btn-sm m-2" (click)="editarPaciente(paciente)">
-            Editar</button>
-          <button type="button" class="btn btn-outline-danger btn-sm m-2" (click)="deletarPaciente(paciente.id!)">
-            Deletar</button>
-        </td>
-      </tr>
-    </tbody>
-    <tbody *ngIf="pacientes.length == 0">
-      <td colspan="5" style="text-align: center;">Não existe pacientes cadastrados</td>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <div class="br-table">
+      <table class="full-width-table table table-striped table-style mat-elevation-z8">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Sexo</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngIf="pacientes.length > 0">
+          <tr *ngFor="let paciente of pacientes">
+            <td>{{ paciente.nome }}</td>
+            <td>{{ paciente.telefone }}</td>
+            <td>{{ paciente.email }}</td>
+            <td>{{ paciente.sexo }}</td>
+            <td class="d-flex justify-content-center">
+              <button type="button" class="btn btn-outline-warning btn-sm m-2" (click)="editarPaciente(paciente)">
+                Editar</button>
+              <button type="button" class="btn btn-outline-danger btn-sm m-2" (click)="deletarPaciente(paciente.id!)">
+                Deletar</button>
+            </td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="pacientes.length == 0">
+          <td colspan="5" style="text-align: center;">Não existe pacientes cadastrados</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <div class="pagination">
     <button *ngFor="let page of pages" (click)="changePage(page)" [ngClass]="{ 'active': currentPage === page }">
       {{page}}</button>

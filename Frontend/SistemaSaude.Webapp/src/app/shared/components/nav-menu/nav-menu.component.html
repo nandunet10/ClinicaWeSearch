@@ -6,10 +6,19 @@
     </button>
     <nav [ngClass]="{ 'show': isMenuOpen }">
         <ul>
-            <li *ngFor="let menuItem of menuItems">
-                <a [routerLink]="[menuItem.url]" [ngClass]="{ 'is-active': isActive(menuItem.url, false) }">
-                    {{ menuItem.label }}
+            <li *ngFor="let menuItem of menuItems" [ngClass]="{ 'open': menuItem.isOpen }">
+                <a [routerLink]="[menuItem.url]" [ngClass]="{ 'is-active': isActive(menuItem.url!, false) }"
+                    (click)="toggleSubItems(menuItem)">
+                    {{ menuItem.text }}
                 </a>
+
+                <ul *ngIf="menuItem.subItems && menuItem.isOpen">
+                    <li *ngFor="let subItem of menuItem.subItems">
+                        <a [routerLink]="[subItem.url]" [ngClass]="{ 'is-active': isActive(subItem.url!, false) }">
+                            {{ subItem.text }}
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </nav>
