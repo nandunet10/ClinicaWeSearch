@@ -1,0 +1,32 @@
+.br-breadcrumb {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  background-color: #e9ecef;
+
+  li {
+    margin-right: 10px;
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    &.is-active {
+      font-weight: bold;
+    }
+
+    &.home {
+      a {
+        padding: 5px;
+      }
+    }
+
+    &:not(:last-child)::after {
+      content: '>';
+      margin-left: 10px;
+      color: #999;
+    }
+  }
+}

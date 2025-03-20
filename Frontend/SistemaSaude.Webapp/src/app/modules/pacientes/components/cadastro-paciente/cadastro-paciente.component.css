@@ -1,0 +1,7 @@
+.cadastro-paciente {
+  .container {
+    width: 50%;
+    max-width: 600px; 
+    margin: 20px auto;
+  }
+}

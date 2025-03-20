@@ -1,0 +1,16 @@
+<div class="nav-menu">
+    <button class="hamburger-button" (click)="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+    <nav [ngClass]="{ 'show': isMenuOpen }">
+        <ul>
+            <li *ngFor="let menuItem of menuItems">
+                <a [routerLink]="[menuItem.url]" [ngClass]="{ 'is-active': isActive(menuItem.url, false) }">
+                    {{ menuItem.label }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

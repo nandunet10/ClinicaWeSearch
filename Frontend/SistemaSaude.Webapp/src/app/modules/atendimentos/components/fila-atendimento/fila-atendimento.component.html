@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <h2>Lista de Atendimentos</h2>
+    </div>
+    <div class="col-3 p-3 d-flex justify-content-end">
+      <button type="button" class="btn btn-outline-success margin5" (click)="cadastrarAtendimento()">Cadastrar</button>
+    </div>
+  </div>
+
+  <div class="table-responsive mt-2">
+    <div class="br-table">
+      <table class="full-width-table table table-striped table-style mat-elevation-z8">
+        <thead>
+          <tr>
+            <th>Número Sequencial</th>
+            <th>Nome do Paciente</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngIf="atendimentos.length > 0">
+          <tr *ngFor="let atendimento of atendimentos">
+            <td>{{ atendimento.numeroSequencial }}</td>
+            <td>{{ atendimento.paciente?.nome }}</td>
+            <td>{{ atendimento.status }}</td>
+            <td *ngIf="atendimento.status == 'Triagem'" class="d-flex justify-content-center">
+              <button type="button" class="btn btn-outline-info btn-sm m-2"
+                (click)="chamarPaciente(atendimento.id!)">Chamar</button>
+              <button type="button" class="btn btn-outline-danger btn-sm m-2"
+                (click)="cancelarAtendimento(atendimento.id!)">Cancelar</button>
+            </td>
+            <td *ngIf="atendimento.status != 'Triagem'"></td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="atendimentos.length == 0">
+          <td colspan="5" style="text-align: center;">Não existe atendimento cadastrado!</td>
+        </tbody>
+      </table>
+      <div class=" d-flex justify-content-end">
+        <button class="btn btn-outline-secondary" (click)="voltar()">Voltar</button>
+      </div>
+    </div>
+  </div>
+
+</div>

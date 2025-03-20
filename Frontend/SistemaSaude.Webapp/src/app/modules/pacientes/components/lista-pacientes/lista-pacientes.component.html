@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h2>Lista de Pacientes</h2>
+    </div>
+    <div class="col-6 d-flex justify-content-end align-items-center">
+      <div class="input-group">
+        <input type="text" #meuInput class="form-control margin5" placeholder="Digite o e-mail do paciente" />
+        <button type="button" class="btn btn-outline-secondary margin5" (click)="consultarPaciente(meuInput.value)">
+          Consulta</button>
+        <button type="button" class="btn btn-outline-success margin5" (click)="cadastrarPaciente()">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+  <table class="full-width-table table table-striped table-style mat-elevation-z8">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Email</th>
+        <th>Sexo</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="pacientes.length > 0">
+      <tr *ngFor="let paciente of pacientes">
+        <td>{{ paciente.nome }}</td>
+        <td>{{ paciente.telefone }}</td>
+        <td>{{ paciente.email }}</td>
+        <td>{{ paciente.sexo }}</td>
+        <td class="d-flex justify-content-center">
+          <button type="button" class="btn btn-outline-warning btn-sm m-2" (click)="editarPaciente(paciente)">
+            Editar</button>
+          <button type="button" class="btn btn-outline-danger btn-sm m-2" (click)="deletarPaciente(paciente.id!)">
+            Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="pacientes.length == 0">
+      <td colspan="5" style="text-align: center;">Não existe pacientes cadastrados</td>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <button *ngFor="let page of pages" (click)="changePage(page)" [ngClass]="{ 'active': currentPage === page }">
+      {{page}}</button>
+  </div>
+  <div class=" d-flex justify-content-end">
+    <button class="btn btn-outline-secondary" (click)="voltar()">Voltar</button>
+  </div>
+
+</div>

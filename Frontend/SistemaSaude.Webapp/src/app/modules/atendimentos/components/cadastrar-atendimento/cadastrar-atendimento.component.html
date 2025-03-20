@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Cadastrar Atendimento</h2>
+  <form #atendimentoForm="ngForm">
+    <div class="form-group">
+      <label for="pacienteId">Paciente:</label>
+      <select id="pacienteId" class="form-control" [(ngModel)]="atendimento.pacienteId" name="pacienteId" required
+        #pacienteId="ngModel">
+        <option *ngFor="let paciente of pacientes" [value]="paciente.id">{{ paciente.nome }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select id="status" class="form-control" [(ngModel)]="atendimento.status" name="status" required
+        #status="ngModel">
+        <option value="Triagem">Triagem</option>
+      </select>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-outline-primary margin5" (click)="onSubmit()">Registrar</button>
+      <button type="button" class="btn btn-outline-secondary margin5" (click)="voltar()">Voltar</button>
+    </div>
+  </form>
+</div>

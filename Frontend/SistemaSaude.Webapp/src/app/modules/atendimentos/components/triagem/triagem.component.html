@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Triagem</h2>
+  <form #triagemForm="ngForm">
+    <div class="row">
+      <div class="form-group col-4">
+        <label for="atendimentoId">Numero do Atendimento:</label>
+        <input type="number" id="atendimentoId" name="atendimentoId" class="form-control"
+          [(ngModel)]="triagem.atendimentoId" required #atendimentoId="ngModel" disabled>
+      </div>
+      <div class="form-group col-8">
+        <label for="especialidadeId">Especialidade:</label>
+        <select id="especialidadeId" class="form-control" [(ngModel)]="triagem.especialidadeId" name="especialidadeId"
+          required #especialidadeId="ngModel">
+          <option value="1">Clínico geral</option>
+          <option value="2">Pediatra</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-4">
+        <label for="pressaoArterial">Pressão Arterial:</label>
+        <input type="text" id="pressaoArterial" name="pressaoArterial" class="form-control"
+          [(ngModel)]="triagem.pressaoArterial" required #pressaoArterial="ngModel">
+      </div>
+
+      <div class="form-group col-4">
+        <label for="peso">Peso:</label>
+        <input type="number" id="peso" name="peso" class="form-control" [(ngModel)]="triagem.peso" required
+          #peso="ngModel">
+      </div>
+
+      <div class="form-group col-4">
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura" name="altura" class="form-control" [(ngModel)]="triagem.altura" required
+          #altura="ngModel">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="sintomas">Sintomas:</label>
+      <textarea id="sintomas" name="sintomas" class="form-control" [(ngModel)]="triagem.sintomas" required
+        sintomas="ngModel"></textarea>
+    </div>
+
+  </form>
+  <div class=" d-flex justify-content-end">
+    <button type="submit" class="btn btn-outline-primary margin5" [disabled]="!triagemForm.form.valid"
+      (click)="registrar()">Registrar</button>
+    <button class="btn btn-outline-secondary margin5" (click)="voltar()">Voltar</button>
+  </div>
+</div>
