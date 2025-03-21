@@ -3,12 +3,13 @@ import { Paciente } from '../../models/paciente.model';
 import { PacienteService } from '../../services/paciente.service';
 import Swal from 'sweetalert2';
 import { Router, RouterLink } from '@angular/router';
+import { NgIf, NgFor, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-lista-pacientes',
-  standalone: false,
-  templateUrl: './lista-pacientes.component.html',
-  styleUrls: ['./lista-pacientes.component.css']
+    selector: 'app-lista-pacientes',
+    templateUrl: './lista-pacientes.component.html',
+    styleUrls: ['./lista-pacientes.component.css'],
+    imports: [NgIf, NgFor, NgClass]
 })
 export class ListaPacientesComponent implements OnInit {
   @ViewChild('meuInput') meuInput: ElementRef | undefined;

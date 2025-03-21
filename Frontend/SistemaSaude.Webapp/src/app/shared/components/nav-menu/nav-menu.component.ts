@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { Location, NgClass, NgFor, NgIf } from '@angular/common';
 import { IMenuItem } from '../../models/menu.item.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-nav-menu',
-  standalone: false,
-  templateUrl: './nav-menu.component.html',
-  styleUrls: ['./nav-menu.component.css']
+    selector: 'app-nav-menu',
+    templateUrl: './nav-menu.component.html',
+    styleUrls: ['./nav-menu.component.css'],
+    imports: [NgClass, NgFor, RouterLink, NgIf]
 })
 export class NavMenuComponent implements OnInit {
   menuItems: IMenuItem[] = [

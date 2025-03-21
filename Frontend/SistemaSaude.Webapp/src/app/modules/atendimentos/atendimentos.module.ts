@@ -8,19 +8,16 @@ import { TriagemComponent } from './components/triagem/triagem.component';
 import { TriagemService } from './services/triagem.service';
 
 @NgModule({
-  declarations: [
-    FilaAtendimentoComponent,
-    CadastrarAtendimentoComponent,
-    TriagemComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule
-  ],
-  providers: [
-    AtendimentoService,
-    TriagemService
-  ]
-
+    imports: [
+        CommonModule,
+        FormsModule,
+        FilaAtendimentoComponent,
+        CadastrarAtendimentoComponent,
+        TriagemComponent
+    ],
+    providers: [
+        AtendimentoService,
+        TriagemService
+    ]
 })
 export class AtendimentosModule { }

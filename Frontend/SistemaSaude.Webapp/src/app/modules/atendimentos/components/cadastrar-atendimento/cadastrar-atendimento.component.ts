@@ -5,12 +5,14 @@ import Swal from 'sweetalert2';
 import { AtendimentoService } from '../../services/atendimento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PacienteService } from '../../../pacientes/services/paciente.service';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-cadastrar-atendimento',
-  standalone: false,
-  templateUrl: './cadastrar-atendimento.component.html',
-  styleUrls: ['./cadastrar-atendimento.component.css']
+    selector: 'app-cadastrar-atendimento',
+    templateUrl: './cadastrar-atendimento.component.html',
+    styleUrls: ['./cadastrar-atendimento.component.css'],
+    imports: [FormsModule, NgFor]
 })
 export class CadastrarAtendimentoComponent implements OnInit {
   atendimento: Atendimento = {

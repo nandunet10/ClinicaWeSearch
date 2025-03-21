@@ -3,12 +3,13 @@ import { Paciente } from '../../models/paciente.model';
 import { PacienteService } from '../../services/paciente.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-cadastro-paciente',
-  standalone: false,
-  templateUrl: './cadastro-paciente.component.html',
-  styleUrls: ['./cadastro-paciente.component.css']
+    selector: 'app-cadastro-paciente',
+    templateUrl: './cadastro-paciente.component.html',
+    styleUrls: ['./cadastro-paciente.component.css'],
+    imports: [FormsModule]
 })
 export class CadastroPacienteComponent implements OnInit {
   paciente: Paciente = {

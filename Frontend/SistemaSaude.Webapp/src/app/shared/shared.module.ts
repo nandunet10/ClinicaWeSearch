@@ -7,23 +7,21 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [
-    BreadcrumbComponent,
-    NavMenuComponent,
-    DashboardComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    NgxMaskDirective,
-    NgxMaskPipe
-  ],
-  exports: [
-    BreadcrumbComponent,
-    NavMenuComponent,
-    NgxMaskDirective,
-    NgxMaskPipe
-  ],
-  providers: [provideNgxMask()]
+    imports: [
+        CommonModule,
+        RouterModule,
+        NgxMaskDirective,
+        NgxMaskPipe,
+        BreadcrumbComponent,
+        NavMenuComponent,
+        DashboardComponent
+    ],
+    exports: [
+        BreadcrumbComponent,
+        NavMenuComponent,
+        NgxMaskDirective,
+        NgxMaskPipe
+    ],
+    providers: [provideNgxMask()]
 })
 export class SharedModule { }

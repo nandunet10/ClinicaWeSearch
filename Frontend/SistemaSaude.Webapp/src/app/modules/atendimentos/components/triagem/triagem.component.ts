@@ -4,12 +4,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Triagem } from '../../models/triagem.model';
 import { AtendimentoService } from '../../services/atendimento.service';
 import Swal from 'sweetalert2';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-triagem',
-  standalone: false,
-  templateUrl: './triagem.component.html',
-  styleUrls: ['./triagem.component.css']
+    selector: 'app-triagem',
+    templateUrl: './triagem.component.html',
+    styleUrls: ['./triagem.component.css'],
+    imports: [FormsModule]
 })
 export class TriagemComponent {
   triagem: Triagem = {

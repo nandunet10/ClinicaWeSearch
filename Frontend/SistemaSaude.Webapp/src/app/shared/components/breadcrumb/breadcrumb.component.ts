@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd, Params, Route } from "@angular/router";
+import { Router, ActivatedRoute, NavigationEnd, Params, Route, RouterLink } from "@angular/router";
 import { filter } from 'rxjs/operators';
+import { NgFor, NgClass, NgIf } from '@angular/common';
 
 interface IBreadcrumb {
   label: string;
@@ -11,10 +12,10 @@ interface IBreadcrumb {
 }
 
 @Component({
-  selector: 'app-breadcrumb',
-  standalone: false,
-  templateUrl: './breadcrumb.component.html',
-  styleUrls: ['./breadcrumb.component.css']
+    selector: 'app-breadcrumb',
+    templateUrl: './breadcrumb.component.html',
+    styleUrls: ['./breadcrumb.component.css'],
+    imports: [NgFor, NgClass, RouterLink, NgIf]
 })
 export class BreadcrumbComponent implements OnInit {
 

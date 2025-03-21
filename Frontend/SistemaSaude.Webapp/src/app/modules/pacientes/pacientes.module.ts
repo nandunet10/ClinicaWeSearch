@@ -6,16 +6,14 @@ import { PacienteService } from './services/paciente.service';
 import { ListaPacientesComponent } from './components/lista-pacientes/lista-pacientes.component';
 
 @NgModule({
-  declarations: [
-    CadastroPacienteComponent,
-    ListaPacientesComponent,
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-  ],
-  providers: [
-    PacienteService
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        CadastroPacienteComponent,
+        ListaPacientesComponent,
+    ],
+    providers: [
+        PacienteService
+    ]
 })
 export class PacientesModule { }
