@@ -1,20 +1,19 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { SharedModule } from './app/shared/shared.module';
-import { PacientesModule } from './app/modules/pacientes/pacientes.module';
-import { AtendimentosModule } from './app/modules/atendimentos/atendimentos.module';
-import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http';
-import { provideRouter } from '@angular/router';
-import { routes } from './app/app.routes';
-import { AppComponent } from './app/app.component';
+import { CommonModule } from '@angular/common';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, SharedModule, PacientesModule, AtendimentosModule),
+        // importProvidersFrom(BrowserModule, SharedModule, PacientesModule, AtendimentosModule),
+        importProvidersFrom(CommonModule, FormsModule),
         provideHttpClient(withInterceptorsFromDi()),
         provideRouter(routes)
     ]
 })
-  .catch(err => console.error(err));
+    .catch(err => console.error(err));

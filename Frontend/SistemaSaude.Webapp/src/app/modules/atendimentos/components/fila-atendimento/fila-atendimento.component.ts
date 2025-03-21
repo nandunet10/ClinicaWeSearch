@@ -1,15 +1,17 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { AtendimentoService } from '../../services/atendimento.service';
 import { Router } from '@angular/router';
-import { Atendimento } from '../../models/atendimento.model';
 import Swal from 'sweetalert2';
-import { NgIf, NgFor } from '@angular/common';
+import { Atendimento } from '../../models/atendimento.model';
+import { AtendimentoService } from '../../services/atendimento.service';
 
 @Component({
-    selector: 'app-fila-atendimento',
-    templateUrl: './fila-atendimento.component.html',
-    styleUrls: ['./fila-atendimento.component.css'],
-    imports: [NgIf, NgFor]
+  selector: 'app-fila-atendimento',
+  templateUrl: './fila-atendimento.component.html',
+  styleUrls: ['./fila-atendimento.component.css'],
+  imports: [NgIf, NgFor],
+  providers: [AtendimentoService]
+
 })
 export class FilaAtendimentoComponent implements OnInit {
   atendimentos: Atendimento[] = [];

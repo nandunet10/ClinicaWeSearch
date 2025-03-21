@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Paciente } from '../../models/paciente.model';
-import { PacienteService } from '../../services/paciente.service';
+import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { FormsModule } from '@angular/forms';
+import { Paciente } from '../../models/paciente.model';
+import { PacienteService } from '../../services/paciente.service';
 
 @Component({
-    selector: 'app-cadastro-paciente',
-    templateUrl: './cadastro-paciente.component.html',
-    styleUrls: ['./cadastro-paciente.component.css'],
-    imports: [FormsModule]
+  selector: 'app-cadastro-paciente',
+  templateUrl: './cadastro-paciente.component.html',
+  styleUrls: ['./cadastro-paciente.component.css'],
+  imports: [FormsModule],
+  providers: [PacienteService]
 })
 export class CadastroPacienteComponent implements OnInit {
   paciente: Paciente = {

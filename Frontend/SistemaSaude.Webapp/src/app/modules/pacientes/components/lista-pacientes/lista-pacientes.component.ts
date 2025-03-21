@@ -1,15 +1,16 @@
+import { CommonModule, NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Paciente } from '../../models/paciente.model';
 import { PacienteService } from '../../services/paciente.service';
-import Swal from 'sweetalert2';
-import { Router, RouterLink } from '@angular/router';
-import { NgIf, NgFor, NgClass } from '@angular/common';
 
 @Component({
-    selector: 'app-lista-pacientes',
-    templateUrl: './lista-pacientes.component.html',
-    styleUrls: ['./lista-pacientes.component.css'],
-    imports: [NgIf, NgFor, NgClass]
+  selector: 'app-lista-pacientes',
+  templateUrl: './lista-pacientes.component.html',
+  styleUrls: ['./lista-pacientes.component.css'],
+  imports: [NgIf, NgFor, NgClass, CommonModule],
+  providers: [PacienteService]
 })
 export class ListaPacientesComponent implements OnInit {
   @ViewChild('meuInput') meuInput: ElementRef | undefined;

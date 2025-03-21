@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { Paciente } from '../../../pacientes/models/paciente.model';
-import { Atendimento } from '../../models/atendimento.model';
-import Swal from 'sweetalert2';
-import { AtendimentoService } from '../../services/atendimento.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PacienteService } from '../../../pacientes/services/paciente.service';
-import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
+import { Paciente } from '../../../pacientes/models/paciente.model';
+import { PacienteService } from '../../../pacientes/services/paciente.service';
+import { Atendimento } from '../../models/atendimento.model';
+import { AtendimentoService } from '../../services/atendimento.service';
 
 @Component({
     selector: 'app-cadastrar-atendimento',
     templateUrl: './cadastrar-atendimento.component.html',
     styleUrls: ['./cadastrar-atendimento.component.css'],
-    imports: [FormsModule, NgFor]
+    imports: [FormsModule, NgFor],
+    providers:[PacienteService]
 })
 export class CadastrarAtendimentoComponent implements OnInit {
   atendimento: Atendimento = {
